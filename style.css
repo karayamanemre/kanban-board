@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fuzzy+Bubbles&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  --column-1: #ac7088;
+  --column-2: #deb6ab;
+  --column-3: #ecccb2;
+  --column-4: #f5e8c7;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: 'Courier Prime', sans-serif;
+  overflow-y: hidden;
+  background: #fff8ea;
+}
+
+header,
+footer {
+  display: flex;
+  height: 50px;
+  margin: 10px 35px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  letter-spacing: 2px;
+  color: #ac7088;
+}
+
+.main-title,
+.footer-title {
+  font-size: 1.25rem;
+  color: #fff8ea;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-h1 {
+  color: #f5e8c7;
+}
+
+.drag-container {
+  margin: 25px;
+  height: calc(100vh - 170px);
+}
+
+.drag-list {
+  display: flex;
+  align-items: flex-start;
+}
+
+.drag-column {
+  flex: 1;
+  margin: 0 10px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.todo-column .header,
+.todo-column .solid,
+.todo-column .solid:hover,
+.todo-column .over {
+  background-color: var(--column-1);
+}
+
+.in-progress-column .header,
+.in-progress-column .solid,
+.in-progress-column .solid:hover,
+.in-progress-column .over {
+  background-color: var(--column-2);
+}
+
+.in-review-column .header,
+.in-review-column .solid,
+.in-review-column .solid:hover,
+.in-review-column .over {
+  background-color: var(--column-3);
+}
+
+.done-column .header,
+.done-column .solid,
+.done-column .solid:hover,
+.done-column .over {
+  background-color: var(--column-4);
+}
+
+.custom-scroll {
+  overflow-y: auto;
+  max-height: 61vh;
+  font-family: 'Fuzzy Bubbles', sans-serif;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px #9e7676;
+  background-color: #9e7676;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+}
+
+.over {
+  padding: 50px 10px;
+}
+
+.drag-item-list {
+  min-height: 50px;
+}
+
+.drag-item {
+  margin: 10px;
+  padding: 10px;
+  height: fit-content;
+  background-color: #9e7676;
+  border-radius: 10px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.drag-item:focus {
+  outline: none;
+  background-color: #fff8ea;
+  color: #9e7676;
+}
+
+.add-btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn {
+  margin: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  user-select: none;
+}
+
+.add-btn:hover {
+  background-color: #fff8ea;
+  color: #9e7676;
+}
+
+.add-btn:active {
+  transform: scale(0.9);
+}
+
+.solid {
+  display: none;
+}
+
+.solid:hover {
+  transition: unset;
+  filter: brightness(95%);
+  color: #fff;
+}
+
+.plus-sign {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  position: relative;
+}
+
+.add-container {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100px;
+  display: none;
+}
+
+.add-item {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 5px auto;
+  resize: none;
+  color: #9e7676;
+  padding: 10px;
+}
+
+.add-item:focus {
+  outline: none;
+}
+
+.footer-title {
+  cursor: pointer;
+}
+
+.footer-title:hover {
+  color: #ff1111;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-y: auto;
+  }
+
+  header,
+  footer {
+    margin: 10px 25px;
+  }
+
+  .drag-container {
+    margin: 15px;
+    height: auto;
+  }
+
+  .drag-list {
+    display: block;
+  }
+
+  .drag-column {
+    margin: 10px;
+  }
+}
