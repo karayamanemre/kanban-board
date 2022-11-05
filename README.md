@@ -1,6 +1,6 @@
 # Kanban Board
 
-> Simple Kanban Board built with Vanilla JavaScript. You can add, drag, drop, and delete items from the board and save it using the local storage.
+> A simple Kanban Board built with Vanilla JavaScript. You can add, drag, drop, and delete items from the board and save it using the local storage.
 
 ## Built With
 
